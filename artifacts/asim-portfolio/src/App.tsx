@@ -177,7 +177,7 @@ function Home() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className={`font-daken text-5xl sm:text-6xl md:text-7xl mb-4 leading-[1.25] drop-shadow-lg transition-colors duration-500 ${t.name}`}
             >
-              عاصم بن هلابي
+              عاصم سالم بن هلابي
             </motion.h1>
 
             {/* Tagline */}
