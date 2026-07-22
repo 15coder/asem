@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "عاصم سالم بن هلابي"
+version = "1.0.0"
+id = "artifacts/asim-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20472
+
+[services.development]
+run = "pnpm --filter @workspace/asim-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/asim-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/asim-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20472"
+BASE_PATH = "/"
