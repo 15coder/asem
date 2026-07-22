@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/public"
+  publish = "artifacts/asim-portfolio/dist/public"
   command = "pnpm --filter @workspace/asim-portfolio run build"
 
 [[redirects]]
