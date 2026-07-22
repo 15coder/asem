@@ -131,7 +131,7 @@ function Home() {
         {/* ── Hero ── */}
         <section
           aria-label="بطاقة التعريف"
-          className="min-h-screen flex flex-col items-center justify-center relative px-6 py-16"
+          className="h-screen flex flex-col items-center justify-center relative px-6 py-16"
         >
           <div className="text-center max-w-3xl mx-auto w-full flex flex-col items-center">
 
@@ -177,7 +177,7 @@ function Home() {
               transition={{ duration: 0.8, delay: 0.25 }}
               className={`font-daken text-5xl sm:text-6xl md:text-7xl mb-4 leading-[1.25] drop-shadow-lg transition-colors duration-500 ${t.name}`}
             >
-              عاصم سالم بن هلابي
+              عاصم بن هلابي
             </motion.h1>
 
             {/* Tagline */}
@@ -233,11 +233,14 @@ function Home() {
           </motion.div>
         </section>
 
+        {/* ── About + Footer wrapper: together fill exactly one screen ── */}
+        <div className="min-h-screen flex flex-col">
+
         {/* ── About Section ── */}
         <section
           id="about"
           aria-label="نبذة عن عاصم سالم بن هلابي"
-          className={`relative py-28 px-6 flex justify-center z-20 transition-colors duration-500 ${t.sectionBg}`}
+          className={`relative flex-1 py-28 px-6 flex justify-center items-center z-20 transition-colors duration-500 ${t.sectionBg}`}
         >
           <motion.article
             initial={{ opacity: 0, y: 40 }}
@@ -261,30 +264,31 @@ function Home() {
           </motion.article>
         </section>
 
-      </main>
+        {/* ── Footer ── */}
+        <footer
+          className={`py-12 text-center border-t relative z-20 transition-colors duration-500 ${t.sectionBg} ${t.footerBorder}`}
+          aria-label="تذييل الصفحة"
+        >
+          <p className={`text-sm mb-6 transition-colors duration-500 ${t.footerCopy}`}>
+            <small>© {new Date().getFullYear()} عاصم سالم بن هلابي. جميع الحقوق محفوظة.</small>
+          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p className={`text-xs mb-1 transition-colors duration-500 ${t.footerLabel}`}>تصميم وبرمجة</p>
+            <a
+              href="https://needaa.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="زيارة موقع المبرمج نداء الرحمن عبود"
+              className={`group inline-flex items-center gap-2 px-5 py-2 rounded-full border text-sm transition-all duration-300 hover:-translate-y-0.5 ${t.devBtn}`}
+            >
+              <span>نداء الرحمن عبود</span>
+              <FaExternalLinkAlt className="text-[10px] opacity-50 group-hover:opacity-80 transition-opacity" aria-hidden="true" />
+            </a>
+          </div>
+        </footer>
 
-      {/* ── Footer ── */}
-      <footer
-        className={`py-12 text-center border-t relative z-20 transition-colors duration-500 ${t.sectionBg} ${t.footerBorder}`}
-        aria-label="تذييل الصفحة"
-      >
-        <p className={`text-sm mb-6 transition-colors duration-500 ${t.footerCopy}`}>
-          <small>© {new Date().getFullYear()} عاصم سالم بن هلابي. جميع الحقوق محفوظة.</small>
-        </p>
-        <div className="flex flex-col items-center gap-2">
-          <p className={`text-xs mb-1 transition-colors duration-500 ${t.footerLabel}`}>تصميم وبرمجة</p>
-          <a
-            href="https://needaa.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="زيارة موقع المبرمج نداء الرحمن عبود"
-            className={`group inline-flex items-center gap-2 px-5 py-2 rounded-full border text-sm transition-all duration-300 hover:-translate-y-0.5 ${t.devBtn}`}
-          >
-            <span>نداء الرحمن عبود</span>
-            <FaExternalLinkAlt className="text-[10px] opacity-50 group-hover:opacity-80 transition-opacity" aria-hidden="true" />
-          </a>
-        </div>
-      </footer>
+        </div>{/* end about+footer screen wrapper */}
+      </main>
     </div>
   );
 }
